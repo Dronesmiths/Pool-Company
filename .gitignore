@@ -2,3 +2,5 @@
 node_modules/
 dist/
 .env
+_trash_images/
+legacy_assets_backup.zip
