@@ -86,22 +86,32 @@ def clean_assets():
 
     print(f"\n[ACTION] Found {len(unused_images)} unused images. Moving to {trash_dir}...")
     
-    for img in unused_images:
-        print(f"  - Identifying: {img}")
-        # Find the actual path again to move it (since we only stored filenames in set for matching)
-        found = False
-        for root, dirs, files in os.walk(images_dir):
-            if img in files:
-                src = os.path.join(root, img)
-                dst = os.path.join(trash_dir, img)
-                shutil.move(src, dst)
-                print(f"  > Moved: {img}")
-                found = True
-                break
-        if not found:
-            print(f"  ! Warning: Could not locate {img} for move.")
+    manifest_path = os.path.join(trash_dir, "manifest.txt")
+    with open(manifest_path, "a") as manifest:
+        from datetime import datetime
+        manifest.write(f"\n--- Purge Run: {datetime.now()} ---\n")
+        
+        for img in unused_images:
+            print(f"  - Identifying: {img}")
+            found = False
+            for root, dirs, files in os.walk(images_dir):
+                if img in files:
+                    src = os.path.join(root, img)
+                    dst = os.path.join(trash_dir, img)
+                    shutil.move(src, dst)
+                    manifest.write(f"Moved: {img}\n")
+                    print(f"  > Moved: {img}")
+                    found = True
+                    break
+            if not found:
+                print(f"  ! Warning: Could not locate {img} for move.")
+                manifest.write(f"Missing: {img}\n")
 
-    print("\n[DONE] Cleanup complete. Verify '_trash_images' folder and delete when ready.")
+    # 6. Archive to Zip
+    archive_name = os.path.join(project_root, "legacy_assets_backup")
+    shutil.make_archive(archive_name, 'zip', trash_dir)
+    print(f"\n[BACKUP] Archived purged assets to: {archive_name}.zip")
+    print("[DONE] Verification complete. You can safely delete '_trash_images' and the zip file when ready.")
 
 if __name__ == "__main__":
     clean_assets()
