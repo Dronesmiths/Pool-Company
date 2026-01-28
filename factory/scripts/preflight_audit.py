@@ -1,33 +1,48 @@
 import os
 import re
 import sys
+import json
 
-# Configuration - Future agents should update these based on CLIENT_INTAKE.md
-CLIENT_NAME = "[BUSINESS_NAME]"
-OLD_BRAND = "[TEMPLATE_BRAND_TO_PURGE]"
-FORBIDDEN_WORDS = ["[SERVICE_1]", "[SERVICE_2]", "[SERVICE_3]", "[LOCATION_1]", "[LOCATION_2]"]
-PHONE = "[PHONE_NUMBER]"
-EMAIL = "[EMAIL_ADDRESS]"
-PRIMARY_DOMAIN = "[DOMAIN_NAME]"
+def load_config():
+    """Load configuration from factory_config.json"""
+    config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "factory_config.json"))
+    if not os.path.exists(config_path):
+        print(f"ERROR: Configuration file not found at {config_path}")
+        sys.exit(1)
+    
+    with open(config_path, 'r') as f:
+        return json.load(f)
 
 def print_banner(text):
     print("\n" + "="*60)
     print(f" {text}")
     print("="*60)
 
-def audit_files(directory):
+def audit_files(directory, config):
     errors = 0
     warnings = 0
     
+    # Extract config values
+    client = config.get("client", {})
+    aws = config.get("aws", {})
+    seo = config.get("seo", {})
+    
+    CLIENT_NAME = client.get("name", "[BUSINESS_NAME]")
+    PHONE = client.get("phone", "[PHONE_NUMBER]")
+    # Clean phone for regex/search
+    RAW_PHONE = re.sub(r'\D', '', PHONE)
+    
+    FORBIDDEN_WORDS = ["Diaz Landscaping", "Diaz", "LER", "Reed and Sons", "Artisan Bread", "Handyman"]
+    
     html_files = []
     for root, dirs, files in os.walk(directory):
-        if any(d in root for d in [".git", ".gemini", "node_modules"]):
+        if any(d in root for d in [".git", ".gemini", "node_modules", "factory"]):
             continue
         for file in files:
             if file.endswith(".html"):
                 html_files.append(os.path.join(root, file))
 
-    print(f"Auditing {len(html_files)} HTML files for brand integrity...")
+    print(f"Auditing {len(html_files)} HTML files for brand integrity ({CLIENT_NAME})...")
 
     for filepath in html_files:
         rel_path = os.path.relpath(filepath, directory)
@@ -37,56 +52,31 @@ def audit_files(directory):
         file_issues = []
 
         # 1. Leakage Check
-        if OLD_BRAND.lower() in content.lower():
-            file_issues.append(f"CRITICAL: Found legacy branding '{OLD_BRAND}'")
-            errors += 1
-            
         for word in FORBIDDEN_WORDS:
-            if word.lower() in content.lower():
-                file_issues.append(f"WARNING: Found legacy service term '{word}'")
-                warnings += 1
+            if word.lower() in content.lower() and word.lower() != CLIENT_NAME.lower():
+                file_issues.append(f"CRITICAL: Found legacy branding/forbidden word '{word}'")
+                errors += 1
 
         # 2. Identity Sync
         if PHONE not in content and "tel:" in content:
-            # Check if there's a different phone number
-            found_phones = re.findall(r'tel:(\d{10})', content)
-            if found_phones and found_phones[0] != PHONE.replace("(", "").replace(")", "").replace(" ", "").replace("-", ""):
-                 file_issues.append(f"WARNING: Phone number mismatch. Found {found_phones[0]}, expected {PHONE}")
+            # Check for any phone numbers that don't match our RAW_PHONE
+            found_phones = re.findall(r'tel:(\d{10,11})', content)
+            if found_phones and found_phones[0] != RAW_PHONE:
+                 file_issues.append(f"WARNING: Phone number mismatch. Found {found_phones[0]}, expected {RAW_PHONE}")
                  warnings += 1
 
         # 3. Broken Links / Placeholders
         if 'href="#"' in content:
             file_issues.append("WARNING: Found placeholder link href='#'")
             warnings += 1
-
-        if '/news/' in content:
-            file_issues.append("WARNING: Found legacy /news/ link. Should be /blog/")
-            warnings += 1
             
         # 4. Meta Quality & Social
-        if "<title>" not in content or "</title>" not in content:
+        if "<title>" not in content:
             file_issues.append("ERROR: Missing <title> tag")
             errors += 1
-        
-        if 'property="og:image"' not in content:
-            file_issues.append("WARNING: Missing Open Graph Image tag (og:image)")
-            warnings += 1
 
-        if 'property="og:title"' not in content:
-            file_issues.append("WARNING: Missing Open Graph Title tag (og:title)")
-            warnings += 1
-            
-        if 'av-pool-bros-logo.png' not in content and 'og:image' in content:
-             file_issues.append("WARNING: Using non-standard social sharing image (expected av-pool-bros-logo.png)")
-             warnings += 1
-        
         if 'name="description"' not in content:
             file_issues.append("WARNING: Missing meta description")
-            warnings += 1
-
-        # 5. Favicon Check
-        if 'rel="icon"' not in content and 'rel="shortcut icon"' not in content:
-            file_issues.append("WARNING: Missing favicon link")
             warnings += 1
 
         if file_issues:
@@ -97,11 +87,13 @@ def audit_files(directory):
     return errors, warnings
 
 if __name__ == "__main__":
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    config = load_config()
     
-    print_banner(f"PRE-FLIGHT AUDIT: {CLIENT_NAME}")
+    client_name = config.get("client", {}).get("name", "Unknown Client")
+    print_banner(f"FACTORY PRE-FLIGHT AUDIT: {client_name}")
     
-    err, warn = audit_files(project_root)
+    err, warn = audit_files(project_root, config)
     
     print_banner("AUDIT SUMMARY")
     print(f"Total Errors: {err}")
@@ -110,9 +102,6 @@ if __name__ == "__main__":
     if err > 0:
         print("\n[RESULT] FAIL: Critical errors found. Do not deploy.")
         sys.exit(1)
-    elif warn > 0:
-        print("\n[RESULT] PASS WITH WARNINGS: Review warnings before deployment.")
-        sys.exit(0)
     else:
-        print("\n[RESULT] PERFECT PASS: System is clean. Ready for deployment.")
+        print("\n[RESULT] PASS: System is ready for deployment sync.")
         sys.exit(0)

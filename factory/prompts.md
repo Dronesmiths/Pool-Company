@@ -2,6 +2,17 @@
 
 Use these prompts to ensure high-fidelity rebranding when transitioning a project from the Gold Master template to a new niche.
 
+## The Toolbox (Drop-in) Workflow
+> [!TIP]
+> This folder is a "Toolbox." It should NOT be modified. Instead, modify `factory/factory_config.json` once per site.
+
+1. **Drop-in**: Copy the `factory/` folder into your new repository.
+2. **Configure**: Edit `factory/factory_config.json` with the new client data.
+3. **Audit**: Run `python3 factory/scripts/preflight_audit.py` to check for legacy leaks.
+4. **Generate**: Run `python3 factory/scripts/generate_blog_batch.py` to spin up niche content.
+5. **Deploy**: Use `factory/S3_CLOUDFRONT_DEPLOY.md` to seek-and-destroy infrastructure IDs.
+6. **Remove**: Delete the `factory/` folder before final handoff to the client (optional).
+
 ## 1. Aesthetic Palette Synchronization
 > [!IMPORTANT]
 > Always check for secondary CSS definitions that might override root variables.
