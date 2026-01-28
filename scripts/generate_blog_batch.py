@@ -43,7 +43,7 @@ blog_template = """<!DOCTYPE html>
                     <li><a href="/">Home</a></li>
                     <li><a href="/services/">Services</a></li>
                     <li><a href="/about/">About Us</a></li>
-                    <li><a href="/news/" class="active">News</a></li>
+                    <li><a href="/blog/" class="active">Blog</a></li>
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
             </nav>
@@ -84,7 +84,7 @@ blog_template = """<!DOCTYPE html>
                 
                 <div style="font-size: 0.9rem; color: #666;">
                     <p><strong>Tags:</strong> {tags}</p>
-                    <p><a href="/news/">&larr; Back to All Articles</a></p>
+                    <p><a href="/blog/">&larr; Back to All Articles</a></p>
                 </div>
             </div>
         </div>
@@ -106,10 +106,10 @@ blog_template = """<!DOCTYPE html>
     <!-- Footer -->
     <footer class="aw-footer">
         <div class="container aw-footer-inner">
-            <div class="aw-footer-brand">
-                <img src="/images/av-pool-bros-logo.png" alt="AV Pool Bros Logo" style="max-width: 250px; margin-bottom: 15px;">
-                <p>Your trusted pool maintenance provider in the Antelope Valley.</p>
-            </div>
+                <div class="aw-footer-brand" style="margin-bottom: 30px;">
+                    <img src="/images/av-pool-bros-logo.png" alt="AV Pool Bros - Professional Pool Cleaning & Maintenance" style="max-width: 200px; margin-bottom: 20px;">
+                    <p style="opacity: 0.8; line-height: 1.6;">Your trusted pool cleaning and maintenance provider in the Antelope Valley. Quality craftsmanship, reliable service.</p>
+                </div>
             <div class="aw-footer-contact">
                 <h4 style="color: white; margin-bottom: 15px; font-size: 1.1rem;">Contact Us</h4>
                 <p class="aw-footer-phone"><a href="tel:6614984444">(661) 498-4444</a></p>

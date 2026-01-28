@@ -16,8 +16,8 @@ Before using the automated deployment workflow, the AI agent must have the follo
 ## 3. Contact & Connectivity
 - **Phone Number**: (661) 498-4444
 - **Email Address**: brian@dronesmiths.com
-- **AWS Bucket Name**: reed-and-sons
-- **CloudFront Distribution ID**: E2NPLNKHF7SDUX
+- **AWS Bucket Name**: av-pool-bros
+- **CloudFront Distribution ID**: ERINMCTBFMBEY
 
 > [!TIP]
 > **Next Step**: Proceed to [BRAND_GUIDE.md](BRAND_GUIDE.md) to define the visual identity.

@@ -1,13 +1,13 @@
 :root {
     /* AV Pool Bros - Blue & White Rebranding */
-    --primary-blue: #0077be;
-    /* Ocean Blue */
+    --primary-blue: #33bbff;
+    /* Even brighter, vibrant pool blue */
     --primary-accent: #b0e0e6;
     /* Powder Blue */
-    --blue-dark: #00568a;
-    /* Darker blue for contrast/hover */
-    --blue-light: #e0f2f7;
-    /* Very light blue for backgrounds */
+    --blue-dark: #0088cc;
+    /* Standard blue for contrast/hover */
+    --blue-light: #f0faff;
+    /* Extra light blue for backgrounds */
     --white: #ffffff;
     --text-dark: #1a1a1a;
     /* Dark text */
@@ -18,10 +18,14 @@
     --footer-dark: #003366;
     /* Deep navy for footer */
     --primary-green: var(--primary-blue);
-    /* Fallback for existing classes */
+    /* Standardized to blue */
     --primary-yellow: var(--primary-accent);
-    /* Fallback for existing classes */
+    /* Standardized to blue */
     --primary-dark: var(--blue-dark);
+    --hero-blue-1: rgba(0, 170, 255, 0.75);
+    /* Bright Blue Transparent */
+    --hero-blue-2: rgba(0, 86, 138, 0.65);
+    /* Deeper Blue Transparent */
 
     /* Fonts */
     --font-heading: 'Poppins', sans-serif;
@@ -282,7 +286,7 @@ nav a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(27, 77, 46, 0.85) 0%, rgba(13, 38, 23, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(51, 187, 255, 0.5) 0%, rgba(0, 136, 204, 0.4) 100%);
     z-index: 1;
 }
 
@@ -293,7 +297,7 @@ nav a.active {
 
 .page-hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--blue-dark) 100%);
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -342,6 +346,231 @@ nav a.active {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .hero p {
+        font-size: 1rem !important;
+        padding: 0 15px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+    }
+
+    /* Blog Specific Mobile Refinements */
+    .blog-content {
+        padding: 0 20px !important;
+    }
+
+    .blog-content h1,
+    .page-hero h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .blog-content h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .blog-content .lead {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* About Page Specific Styles */
+.about-hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.about-hero-eyebrow {
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    display: block;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.about-hero-desc {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.95;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.philosophy-section {
+    background: white;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(51, 187, 255, 0.05);
+    font-size: 25rem;
+    z-index: 0;
+}
+
+.philosophy-quote {
+    color: var(--primary-navy);
+    font-size: 2.2rem;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.philosophy-quote span {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.philosophy-divider {
+    background: var(--primary-blue);
+    width: 100px;
+    height: 4px;
+    margin: 40px auto;
+    border-radius: 2px;
+}
+
+.philosophy-sub {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 500;
+    text-align: center;
+}
+
+.stats-bar {
+    background: var(--primary-blue);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-number {
+    color: white;
+    font-size: 3rem;
+    font-weight: 800;
+    display: block;
+}
+
+.stat-label {
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-section {
+    padding: 100px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.team-role {
+    color: var(--primary-blue);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.team-content h2 {
+    color: var(--primary-navy);
+    font-size: 2.5rem;
+    margin: 15px 0 25px;
+}
+
+.team-signature {
+    margin-top: 30px;
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 20px;
+}
+
+/* About Page Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.2rem !important;
+        padding: 0 10px;
+    }
+
+    .about-hero-desc {
+        font-size: 1.1rem !important;
+        padding: 0 15px;
+    }
+
+    .philosophy-quote {
+        font-size: 1.5rem !important;
+        padding: 0 15px;
+    }
+
+    .philosophy-sub {
+        padding: 0 20px;
+        color: #333 !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    .stat-number {
+        font-size: 3rem !important;
+        color: white !important;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .team-content h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .philosophy-bg-icon {
+        font-size: 12rem;
+        opacity: 0.1;
+    }
 }
 
 /* Features Section (Why Choose Us) */
@@ -469,7 +698,7 @@ nav a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(27, 77, 46, 0.9) 0%, rgba(13, 38, 23, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(51, 187, 255, 0.7) 0%, rgba(0, 136, 204, 0.6) 100%);
     z-index: 1;
     transition: background 0.3s ease;
 }
@@ -1576,12 +1805,6 @@ footer {
     padding: 0 15px;
 }
 
-/* New Section: Stats Bar */
-.stats-bar {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a1628 100%);
-    padding: 70px 0;
-    color: var(--white);
-}
 
 .stats-grid {
     display: flex;

@@ -32,12 +32,12 @@ python3 scripts/preflight_audit.py
 ### Step 3: Sync to S3 (Dry Run First)
 Always run with `--dryrun` first to prevent infrastructure collisions.
 ```bash
-aws s3 sync . s3://all-clean-junk-removal --exclude ".git/*" --profile mediusa --dryrun
+aws s3 sync . s3://av-pool-bros --exclude ".git/*" --profile mediusa --dryrun
 ```
 
 If the dry run is successful:
 ```bash
-aws s3 sync . s3://all-clean-junk-removal \
+aws s3 sync . s3://av-pool-bros \
     --exclude ".git/*" \
     --exclude ".DS_Store" \
     --profile mediusa
@@ -46,7 +46,7 @@ aws s3 sync . s3://all-clean-junk-removal \
 ### Step 4: Invalidate CloudFront Cache
 ```bash
 aws cloudfront create-invalidation \
-    --distribution-id E33YEN9BC0LHET \
+    --distribution-id ERINMCTBFMBEY \
     --paths "/*" \
     --profile mediusa
 ```

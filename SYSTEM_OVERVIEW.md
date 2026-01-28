@@ -33,6 +33,9 @@
 
 ## 5. Deployment
 - **Method**: Git-driven deployment (AWS S3/CloudFront standard).
+- **S3 Bucket**: `av-pool-bros`
+- **CloudFront ID**: `ERINMCTBFMBEY`
+- **CloudFront URL**: `https://d2vas75ebrfte.cloudfront.net/`
 - **Repository**: `https://github.com/Dronesmiths/Pool-Company.git` (main branch).
 
 ---

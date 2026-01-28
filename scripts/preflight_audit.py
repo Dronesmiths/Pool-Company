@@ -5,7 +5,7 @@ import sys
 # Configuration - Future agents should update these based on CLIENT_INTAKE.md
 CLIENT_NAME = "AV Pool Bros"
 OLD_BRAND = "Diaz Landscaping"
-FORBIDDEN_WORDS = ["Handyman", "Handy", "Home Service", "Lawn", "Mowing", "Landscaping"] # Words from legacy templates to avoid
+FORBIDDEN_WORDS = ["Handyman", "Handy", "Home Service", "Lawn", "Mowing", "Landscaping", "Property Cleanup", "Yard Waste"] # Words from legacy templates to avoid
 PHONE = "(661) 498-4444"
 EMAIL = "brian@dronesmiths.com"
 PRIMARY_DOMAIN = "avpoolbros.com"
@@ -58,11 +58,27 @@ def audit_files(directory):
         if 'href="#"' in content:
             file_issues.append("WARNING: Found placeholder link href='#'")
             warnings += 1
+
+        if '/news/' in content:
+            file_issues.append("WARNING: Found legacy /news/ link. Should be /blog/")
+            warnings += 1
             
-        # 4. Meta Quality
+        # 4. Meta Quality & Social
         if "<title>" not in content or "</title>" not in content:
             file_issues.append("ERROR: Missing <title> tag")
             errors += 1
+        
+        if 'property="og:image"' not in content:
+            file_issues.append("WARNING: Missing Open Graph Image tag (og:image)")
+            warnings += 1
+
+        if 'property="og:title"' not in content:
+            file_issues.append("WARNING: Missing Open Graph Title tag (og:title)")
+            warnings += 1
+            
+        if 'av-pool-bros-logo.png' not in content and 'og:image' in content:
+             file_issues.append("WARNING: Using non-standard social sharing image (expected av-pool-bros-logo.png)")
+             warnings += 1
         
         if 'name="description"' not in content:
             file_issues.append("WARNING: Missing meta description")
