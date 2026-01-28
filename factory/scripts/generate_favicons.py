@@ -27,6 +27,16 @@ def generate_favicons(source_image_path):
         resized.save(f"images/{filename}")
         print(f"Generated: images/{filename}")
 
+    # 3. Main Logo & Social Share
+    # Standard logo (matches footer usage)
+    logo_size = (400, 150) # Maintain aspect ratio if possible, but for now fit to box
+    img.thumbnail(logo_size, Image.Resampling.LANCZOS)
+    img.save("images/av-pool-bros-logo.png")
+    print("Generated: images/av-pool-bros-logo.png")
+
+    img.save("images/logo-og.png")
+    print("Generated: images/logo-og.png")
+
 if __name__ == "__main__":
     # Assumes running from project root or checks factory asset
     # Default to Looking for logo in factory/brand_assets
