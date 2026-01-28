@@ -1,0 +1,32 @@
+{
+    "client": {
+        "name": "BUSINESS_NAME_HERE",
+        "phone": "555-0100",
+        "email": "contact@example.com",
+        "address_city": "Palmdale",
+        "address_state": "CA",
+        "domain": "example.com"
+    },
+    "brand": {
+        "primary_color": "#4CAF50",
+        "secondary_color": "#FF9800",
+        "font_heading": "Poppins",
+        "font_body": "Open Sans"
+    },
+    "aws": {
+        "bucket_name": "example-bucket-name",
+        "region": "us-east-1",
+        "cloudfront_id": "EXXXXXXXXXXXX",
+        "profile": "mediusa"
+    },
+    "seo": {
+        "primary_keywords": [
+            "keyword 1",
+            "keyword 2"
+        ],
+        "service_area": [
+            "Palmdale",
+            "Lancaster"
+        ]
+    }
+}
