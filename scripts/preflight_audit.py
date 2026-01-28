@@ -3,12 +3,12 @@ import re
 import sys
 
 # Configuration - Future agents should update these based on CLIENT_INTAKE.md
-CLIENT_NAME = "Diaz Landscaping"
-OLD_BRAND = "Reed and Sons"
-FORBIDDEN_WORDS = ["Handyman", "Handy", "Home Service"] # Words from legacy templates to avoid
-PHONE = "(661) 583-6000"
+CLIENT_NAME = "AV Pool Bros"
+OLD_BRAND = "Diaz Landscaping"
+FORBIDDEN_WORDS = ["Handyman", "Handy", "Home Service", "Lawn", "Mowing", "Landscaping"] # Words from legacy templates to avoid
+PHONE = "(661) 498-4444"
 EMAIL = "brian@dronesmiths.com"
-PRIMARY_DOMAIN = "d1sxjpzrvgytjj.cloudfront.net"
+PRIMARY_DOMAIN = "avpoolbros.com"
 
 def print_banner(text):
     print("\n" + "="*60)

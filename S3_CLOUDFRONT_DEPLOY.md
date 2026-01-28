@@ -1,6 +1,6 @@
-# AWS S3 & CloudFront Deployment Guide: All Clean Junk Removal
+# AWS S3 & CloudFront Deployment Guide: AV Pool Bros
 
-This guide provides the specific steps to deploy the All Clean Junk Removal website to AWS S3 and CloudFront.
+This guide provides the specific steps to deploy the AV Pool Bros website to AWS S3 and CloudFront.
 
 ## 1. Prerequisites
 - AWS CLI installed and configured.
@@ -19,7 +19,7 @@ This guide provides the specific steps to deploy the All Clean Junk Removal webs
 ### Step 1: Commit Changes
 ```bash
 git add .
-git commit -m "feat: rebrand to All Clean Junk Removal and update contact info"
+git commit -m "feat: rebrand to AV Pool Bros and update contact info"
 git push
 ```
 
@@ -53,6 +53,6 @@ aws cloudfront create-invalidation \
 
 ## 4. Verification
 After deployment, verify the changes at the production URL:
-- Check for "All Clean Junk Removal" branding.
+- Check for "AV Pool Bros" branding.
 - Verify the phone number: **661-382-4566**.
 - Confirm the Green and Yellow theme is active.

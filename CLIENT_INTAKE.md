@@ -4,14 +4,14 @@ Before using the automated deployment workflow, the AI agent must have the follo
 
 ## 1. Niche & Branding
 - **Business Name**: AV Pool Bros
-- **Industry/Niche**: Landscaping, Lawn Care, Yard Maintenance
-- **Primary Color Palette**: Forest Green (#1B4D2E) & Yellow/Gold (#F7B500)
-- **Voice/Tone**: Professional, Reliable, Friendly
+- **Industry/Niche**: Pool Cleaning, Maintenance & Repair
+- **Primary Color Palette**: Ocean Blue (#0077be) & Powder Blue (#b0e0e6)
+- **Voice/Tone**: Professional, Reliable, Crystal Clear Service
 
 ## 2. Location & SEO
 - **Primary HQ**: Palmdale, CA
 - **Service Areas**: Palmdale, Lancaster, Quartz Hill, Rosamond, Lake Los Angeles, Littlerock, Antelope Valley
-- **Primary Keywords**: "landscaping Palmdale", "lawn care Lancaster", "sprinkler repair Antelope Valley"
+- **Primary Keywords**: "pool cleaning Palmdale", "pool maintenance Lancaster", "pool filter repair Antelope Valley"
 
 ## 3. Contact & Connectivity
 - **Phone Number**: (661) 498-4444
@@ -20,4 +20,4 @@ Before using the automated deployment workflow, the AI agent must have the follo
 - **CloudFront Distribution ID**: E2NPLNKHF7SDUX
 
 > [!TIP]
-> **Next Step**: Proceed to [BRAND_GUIDE.md](file:///Users/mediusa/NOVA/Repos/Diaz%20Landscaping/BRAND_GUIDE.md) to define the visual identity.
+> **Next Step**: Proceed to [BRAND_GUIDE.md](BRAND_GUIDE.md) to define the visual identity.
