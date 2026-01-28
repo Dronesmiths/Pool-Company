@@ -54,7 +54,7 @@ Follow these steps in strict order to repurpose this template. Do not proceed to
 
 ### Step 5b: The Lean Purge (Mandatory)
 - **Action**: Run the asset audit script to identify and delete unused legacy images *before* content expansion.
-- **Command**: `python3 scripts/find_unused_images.py` -> Review list -> Delete.
+- **Command**: `python3 factory/scripts/clean_unused_assets.py` -> Review `_trash_images/` -> Delete.
 - **Goal**: Prevent V1/V2 assets (e.g., "lawn mowers") from polluting the V3 repo.
 
 ### Step 6: Niche Rebranding & Local SEO
