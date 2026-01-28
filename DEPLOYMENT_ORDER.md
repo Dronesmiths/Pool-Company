@@ -88,15 +88,18 @@ Follow these steps in strict order to repurpose this template. Do not proceed to
 - **Verification**: Confirm a "PERFECT PASS" from the script and verify the live site one last time.
 
 ### Step 9: The Content Factory (Blog Expansion)
-- **Action**: Use the Python generation scripts to launch the initial 6-article authority batch.
+- **Action**: Use the Python generation scripts to launch the initial authority batches and initialize the News Hub.
 - **Tools**:
     - `scripts/generate_blog_batch.py` (Core Pillars)
     - `scripts/generate_blog_batch_2.py` (Local Spotlights)
-- **Verification**: Ensure `/blog/index.html` links to all new articles and that metadata is distinct.
+    - `scripts/add_blog_nav.py` & `scripts/amplify_local_footer.py`
+- **Verification**: Ensure `/news/index.html` (The Hub) links to all new articles and that metadata is distinct.
 
-### Step 10: Continuous Improvement (The Retro)
-- **Action**: Review [AUTOMATION_UPGRADES.md](AUTOMATION_UPGRADES.md) to identify friction points from the current run.
-- **Verification**: Document at least one "Automation Upgrade" that could have made this pivot faster (e.g., CSS Tokens, Sync Scripts).
+### Step 11: Final Zero-Debt Audit & Handover
+- **Action**: Conduct a final forensic audit and generate the system overview.
+- **Command**: `python3 scripts/preflight_audit.py`
+- **Verification**: Zero critical errors. All brand references synchronized.
+- **Deliverable**: `SYSTEM_OVERVIEW.md` (Defines the project architecture for the client).
 - **Goal**: Each deployment should leave the "Website Factory" template stronger than it found it.
 
 ---
