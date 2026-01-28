@@ -10,46 +10,51 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}=== Workflow Factory V3 Scaffolder ===${NC}"
 
-# 2. Input
+# Step 0: Input
+echo -e "\n${BLUE}[Step 0] Initializing...${NC}"
 read -p "Enter New Project Name (e.g. 'Diaz_Landscaping'): " PROJECT_NAME
 if [ -z "$PROJECT_NAME" ]; then
     echo "Project Name is required."
     exit 1
 fi
 
-# 3. Path Setup
-# Standardized to run from the root of the "Gold Master" project
+# Path Setup
 FACTORY_ROOT=$(dirname "$0")
 SOURCE_ROOT=$(pwd)
 PARENT_DIR="$(dirname "$SOURCE_ROOT")"
 NEW_PROJECT_PATH="$PARENT_DIR/$PROJECT_NAME"
 
-echo -e "Creating new project at: ${GREEN}$NEW_PROJECT_PATH${NC}"
+echo "Targeting: $NEW_PROJECT_PATH"
 
 if [ -d "$NEW_PROJECT_PATH" ]; then
     echo "Directory already exists. Aborting."
     exit 1
 fi
 
-# 4. Create and Copy
+# Step 1: Create Directory
+echo -e "\n${BLUE}[Step 1] Creating Directory Structure...${NC}"
 mkdir -p "$NEW_PROJECT_PATH"
+echo "Created: $NEW_PROJECT_PATH"
 
-# Copy the "Public" site (the Gold Master state)
-echo "Copying Gold Master site files..."
+# Step 2: Copy Public Site
+echo -e "\n${BLUE}[Step 2] Cloning Gold Master Public Site...${NC}"
 cp -r "$SOURCE_ROOT/about" "$SOURCE_ROOT/blog" "$SOURCE_ROOT/contact" "$SOURCE_ROOT/css" "$SOURCE_ROOT/images" "$SOURCE_ROOT/js" "$SOURCE_ROOT/privacy" "$SOURCE_ROOT/services" "$SOURCE_ROOT/terms" "$NEW_PROJECT_PATH/"
 cp "$SOURCE_ROOT/index.html" "$SOURCE_ROOT/robots.txt" "$SOURCE_ROOT/sitemap.xml" "$SOURCE_ROOT/.gitignore" "$NEW_PROJECT_PATH/"
+echo "Public site assets copied."
 
-# Copy the "Factory" engine (The "Brain")
-echo "Cloning Factory Engine..."
+# Step 3: Copy Factory Engine
+echo -e "\n${BLUE}[Step 3] Injecting Factory Engine...${NC}"
 cp -r "$SOURCE_ROOT/factory" "$NEW_PROJECT_PATH/"
+echo "Factory toolbox injected."
 
-# 5. Initialize New Repo
+# Step 4: Git Initialization
+echo -e "\n${BLUE}[Step 4] Initializing Git Repository...${NC}"
 cd "$NEW_PROJECT_PATH"
-echo "Initializing new Git repository..."
 git init
 git checkout -b main
+echo "Git repository initialized at: $(pwd)"
 
-echo -e "${GREEN}=== Scaffolding Complete ===${NC}"
+echo -e "\n${GREEN}=== Scaffolding Complete ===${NC}"
 echo "1. Go to directory: cd $NEW_PROJECT_PATH"
 echo "2. Edit Config: nano factory/factory_config.json"
 echo "3. Review Plan: code factory/DEPLOYMENT_ORDER.md"
