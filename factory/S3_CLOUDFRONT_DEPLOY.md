@@ -1,58 +1,55 @@
-# AWS S3 & CloudFront Deployment Guide: AV Pool Bros
+# AWS S3 & CloudFront Deployment Guide
 
-This guide provides the specific steps to deploy the AV Pool Bros website to AWS S3 and CloudFront.
+This guide provides the standardized steps to deploy your website factory project to AWS S3 and CloudFront.
 
 ## 1. Prerequisites
 - AWS CLI installed and configured.
-- AWS Profile `mediusa` with appropriate permissions.
-- Remote Git Repository: `https://github.com/Dronesmiths/All-Clean_Junk_Removal.git`
+- Valid AWS Profile (default: `mediusa`).
+- Repository hygiene checked with `preflight_audit.py`.
 
-## 2. Infrastructure Details
-- **S3 Bucket**: `all-clean-junk-removal`
-- **CloudFront Distribution ID**: `E33YEN9BC0LHET`
+## 2. Infrastructure "Seek" Protocol
+If you do not have your IDs, use these commands to locate them:
 
-> [!CAUTION]
-> **Check Before Syncing**: Always verify the Bucket Name and Distribution ID in `CLIENT_INTAKE.md` before deploying. Never assume the bucket name from a template is correct for a new client.
+### A. List S3 Buckets
+```bash
+aws s3 ls --profile mediusa
+```
+
+### B. List CloudFront Distributions
+```bash
+aws cloudfront list-distributions --profile mediusa --query "DistributionList.Items[*].{Id:Id,Domain:DomainName,Comment:Comment}" --output table
+```
 
 ## 3. Deployment Workflow
 
-### Step 1: Commit Changes
+### Step 1: Pre-Flight Audit (MANDATORY)
 ```bash
-git add .
-git commit -m "feat: rebrand to AV Pool Bros and update contact info"
-git push
+python3 factory/scripts/preflight_audit.py
 ```
 
-### Step 2: Pre-Flight Audit (MANDATORY)
-Run the automated audit script to verify brand fidelity and link health.
+### Step 2: Sync to S3
+Replace `[BUCKET_NAME]` with your target bucket.
 ```bash
-python3 scripts/preflight_audit.py
-```
-
-### Step 3: Sync to S3 (Dry Run First)
-Always run with `--dryrun` first to prevent infrastructure collisions.
-```bash
-aws s3 sync . s3://av-pool-bros --exclude ".git/*" --profile mediusa --dryrun
-```
-
-If the dry run is successful:
-```bash
-aws s3 sync . s3://av-pool-bros \
+aws s3 sync . s3://[BUCKET_NAME] \
+    --delete \
     --exclude ".git/*" \
+    --exclude ".github/*" \
+    --exclude "factory/*" \
     --exclude ".DS_Store" \
     --profile mediusa
 ```
 
-### Step 4: Invalidate CloudFront Cache
+### Step 3: Invalidate CloudFront Cache
+Replace `[DISTRIBUTION_ID]` with your distribution ID.
 ```bash
 aws cloudfront create-invalidation \
-    --distribution-id ERINMCTBFMBEY \
+    --distribution-id [DISTRIBUTION_ID] \
     --paths "/*" \
     --profile mediusa
 ```
 
 ## 4. Verification
-After deployment, verify the changes at the production URL:
-- Check for "AV Pool Bros" branding.
-- Verify the phone number: **661-382-4566**.
-- Confirm the Green and Yellow theme is active.
+After deployment, verify the changes at the CloudFront URL or custom domain.
+- Check title tags and meta descriptions.
+- Verify phone number and email consistency.
+- Ensure all images (logo/hero) are loading correctly.

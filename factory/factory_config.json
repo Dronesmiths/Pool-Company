@@ -1,32 +1,32 @@
 {
     "client": {
-        "name": "BUSINESS_NAME_HERE",
-        "phone": "555-0100",
-        "email": "contact@example.com",
-        "address_city": "Palmdale",
-        "address_state": "CA",
-        "domain": "example.com"
+        "name": "[BUSINESS_NAME]",
+        "phone": "[PHONE_NUMBER]",
+        "email": "[EMAIL_ADDRESS]",
+        "address_city": "[CITY]",
+        "address_state": "[STATE]",
+        "domain": "[DOMAIN_NAME]"
     },
     "brand": {
-        "primary_color": "#4CAF50",
-        "secondary_color": "#FF9800",
-        "font_heading": "Poppins",
-        "font_body": "Open Sans"
+        "primary_color": "#000000",
+        "secondary_color": "#FFFFFF",
+        "font_heading": "[HEADING_FONT]",
+        "font_body": "[BODY_FONT]"
     },
     "aws": {
-        "bucket_name": "example-bucket-name",
+        "bucket_name": "[BUCKET_NAME]",
         "region": "us-east-1",
-        "cloudfront_id": "EXXXXXXXXXXXX",
+        "cloudfront_id": "[DISTRIBUTION_ID]",
         "profile": "mediusa"
     },
     "seo": {
         "primary_keywords": [
-            "keyword 1",
-            "keyword 2"
+            "[KEYWORD_1]",
+            "[KEYWORD_2]"
         ],
         "service_area": [
-            "Palmdale",
-            "Lancaster"
+            "[SERVICE_AREA_1]",
+            "[SERVICE_AREA_2]"
         ]
     }
 }
