@@ -10,12 +10,9 @@
     <meta name="description"
         content="Professional pool cleaning and maintenance services in Palmdale, Lancaster, and Antelope Valley. Weekly pool service, green pool recovery, spa cleaning, and more. Call (661) 498-4444.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://avpoolcleaners.com/services/">
+    <link rel="canonical" href="https://avpoolcleaning.com/services/">
 
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- SYSTEM FONTS -->
 
     <!-- STYLES -->
     <link rel="stylesheet" href="../css/styles.css">
@@ -23,48 +20,60 @@
 
     <!-- FAVICON -->
     <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon-32x32.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body>
 
     <!-- HEADER -->
-    <header class="av-header">
-        <div class="av-header-inner">
-            <a href="/" class="av-logo">
-                <img src="../images/logo.webp" alt="AV Pool Cleaners Logo">
-            </a>
+  <header class="av-header">
+    <div class="av-header-inner">
 
-            <nav class="av-nav">
-                <a href="/services/green-pool-recovery/" class="av-green-link">Green Pool Recovery</a>
-                <a href="/services/">Pool Services</a>
-                <a href="/pricing/">Pricing</a>
-                <a href="/blog/">Blog</a>
-                <a href="/about/">About</a>
-                <a href="tel:6614984444" class="av-cta">Get a Quote</a>
-            </nav>
+      <!-- LOGO -->
+      <a href="/" class="av-logo">
+        <img src="../images/logo.webp" alt="AV Pool Cleaners Logo" width="190" height="95">
+      </a>
 
-            <button class="av-menu-icon" aria-label="Open Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+      <!-- DESKTOP NAV -->
+      <nav class="av-nav">
+        <a href="/services/green-pool-recovery/" class="av-green-link">
+          Green Pool Recovery
+        </a>
+        <a href="/services/">Pool Services</a>
+        <a href="/locations/">Locations</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="tel:6614984444" class="av-cta">Get a Quote</a>
+      </nav>
 
-        <div class="av-mobile-menu">
-            <a href="/services/green-pool-recovery/" class="av-green-link">Green Pool Recovery</a>
-            <a href="/services/">Pool Services</a>
-            <a href="/pricing/">Pricing</a>
-            <a href="/blog/">Blog</a>
-            <a href="/about/">About</a>
-            <a href="tel:6614984444" class="av-cta">Get a Quote</a>
-        </div>
-    </header>
+      <!-- MOBILE MENU ICON -->
+      <button class="av-menu-icon" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <!-- HERO SECTION -->
-    <section class="av-services-hero">
-        <div class="av-services-hero-inner">
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="av-mobile-menu">
+      <a href="/services/green-pool-recovery/" class="av-green-link">
+        Green Pool Recovery
+      </a>
+      <a href="/services/">Pool Services</a>
+      <a href="/locations/">Locations</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <a href="tel:6614984444" class="av-cta">Get a Quote</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+    <section class="av-hero-master">
+        <div class="av-hero-master-inner">
             <div class="av-services-eyebrow">Professional Pool Care</div>
             <h1>Pool Cleaning & Maintenance Services</h1>
             <p>
@@ -73,14 +82,10 @@
                 clean, balanced, and swim-ready all year long.
             </p>
             <div class="av-services-hero-ctas">
-                <a href="tel:6614984444" class="av-btn-primary">
+                <a href="tel:6614984444" class="btn">
                     Call for Service
                 </a>
-                <a href="/services/" class="av-btn-secondary">
-                    View All Services
-                </a>
             </div>
-        </div>
     </section>
 
     <!-- SERVICES GRID SECTION -->
@@ -95,10 +100,8 @@
             <div class="av-services-grid">
 
                 <!-- Weekly Pool Service -->
-                <div class="av-service-card">
-                    <div class="av-service-icon">
-                        <img src="../images/icon-water.webp" alt="Weekly Pool Cleaning">
-                    </div>
+                <div class="av-service-card av-card-base av-card-blue">
+                    <div class="av-card-accent">💧</div>
                     <h3>Weekly Pool Cleaning</h3>
                     <p>
                         Consistent weekly maintenance keeps your pool clean, balanced, and ready to enjoy.
@@ -110,15 +113,13 @@
                         <li>✓ Water testing & balancing</li>
                         <li>✓ Equipment inspections</li>
                     </ul>
-                    <a href="/services/pricing/" class="service-link">View Pricing →</a>
+                    <a href="/pricing/" class="service-link">View Pricing →</a>
                 </div>
 
                 <!-- Green Pool Recovery -->
-                <div class="av-service-card featured">
+                <div class="av-service-card av-card-base av-card-green featured">
                     <div class="featured-badge">Emergency Service</div>
-                    <div class="av-service-icon">
-                        <img src="../images/icon-cleaner.webp" alt="Green Pool Recovery">
-                    </div>
+                    <div class="av-card-accent">🌿</div>
                     <h3>Green Pool Recovery</h3>
                     <p>
                         Fast, professional cleanup for green, cloudy, or algae-filled pools.
@@ -134,10 +135,8 @@
                 </div>
 
                 <!-- Pool + Spa Service -->
-                <div class="av-service-card">
-                    <div class="av-service-icon">
-                        <img src="../images/icon-chemical.webp" alt="Pool and Spa Service">
-                    </div>
+                <div class="av-service-card av-card-base av-card-gold">
+                    <div class="av-card-accent">✨</div>
                     <h3>Pool + Spa Service</h3>
                     <p>
                         Complete weekly service for pools with attached spas or hot tubs.
@@ -149,14 +148,12 @@
                         <li>✓ Spa brushing & vacuuming</li>
                         <li>✓ Equipment monitoring</li>
                     </ul>
-                    <a href="/services/pricing/" class="service-link">View Pricing →</a>
+                    <a href="/pricing/" class="service-link">View Pricing →</a>
                 </div>
 
                 <!-- Filter Cleaning -->
-                <div class="av-service-card">
-                    <div class="av-service-icon">
-                        <img src="../images/icon-water.webp" alt="Filter Cleaning">
-                    </div>
+                <div class="av-service-card av-card-base av-card-blue">
+                    <div class="av-card-accent">⚙️</div>
                     <h3>Filter Cleaning</h3>
                     <p>
                         Professional cartridge and DE filter cleaning ensures proper circulation
@@ -172,10 +169,8 @@
                 </div>
 
                 <!-- Chemical Balancing -->
-                <div class="av-service-card">
-                    <div class="av-service-icon">
-                        <img src="../images/icon-chemical.webp" alt="Chemical Balancing">
-                    </div>
+                <div class="av-service-card av-card-base av-card-blue">
+                    <div class="av-card-accent">🧪</div>
                     <h3>Water Chemistry Management</h3>
                     <p>
                         Precise water testing and chemical balancing prevents algae, scaling,
@@ -191,10 +186,8 @@
                 </div>
 
                 <!-- Equipment Inspections -->
-                <div class="av-service-card">
-                    <div class="av-service-icon">
-                        <img src="../images/icon-cleaner.webp" alt="Equipment Inspections">
-                    </div>
+                <div class="av-service-card av-card-base av-card-blue">
+                    <div class="av-card-accent">🔍</div>
                     <h3>Equipment Inspections</h3>
                     <p>
                         Regular visual inspections of pumps, heaters, timers, and pool systems
@@ -310,63 +303,68 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="av-footer">
-        <div class="footer-inner">
-            <div class="footer-logo-wrap">
-                <div class="footer-logo-card">
-                    <img src="../images/logo.webp" alt="AV Pool Cleaners Logo">
-                </div>
-            </div>
+  <footer class="av-footer">
+    <div class="footer-inner">
 
-            <div class="footer-grid">
-                <div class="footer-box">
-                    <h4>AV Pool Cleaners</h4>
-                    <p>
-                        Professional pool & spa cleaning for homeowners throughout the Antelope Valley.
-                        Reliable weekly service, crystal-clear water, and friendly local technicians.
-                    </p>
-                </div>
-
-                <div class="footer-box footer-services">
-                    <h4>Services</h4>
-                    <span><a href="/services/weekly-cleaning/">Weekly Pool Cleaning</a></span>
-                    <span><a href="/services/chemical-balancing/">Chemical Balancing</a></span>
-                    <span><a href="/services/filter-cleaning/">Filter Cleaning</a></span>
-                    <span><a href="/services/green-pool-recovery/">Green Pool Recovery</a></span>
-                </div>
-
-                <div class="footer-box">
-                    <h4>Contact</h4>
-                    <p>
-                        📞 <a href="tel:6614984444">(661) 498-4444</a><br>
-                        📍 Antelope Valley, CA<br>
-                        🕒 Mon–Fri · 8am–6pm<br>
-            ⭐ <a href="https://www.google.com/maps/place/AV+Pool+Cleaners/@34.6876064,-118.2278499,11z/data=!3m1!4b1!4m6!3m5!1s0x412e8c13e824aa61:0xbc87f34cc63ded7b!8m2!3d34.6874355!4d-118.0627039!16s%2Fg%2F11yv5bhkh8?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Google Reviews</a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="footer-service-area">
-                Serving Palmdale • Lancaster • Quartz Hill • Rosamond • Antelope Valley
-            </div>
-
-            <div class="footer-divider">
-                <img src="../images/icon-chemical.webp" alt="" class="footer-floater">
-            </div>
-
-            <div class="footer-bottom">
-                © <span id="year"></span> AV Pool Cleaners ·
-                <a href="/about/">About</a> ·
-                <a href="/pricing/">Pricing</a> ·
-                <a href="/services/">Services</a>
-            </div>
+      <!-- LOGO -->
+      <div class="footer-logo-wrap">
+        <div class="footer-logo-card">
+          <img src="../images/logo.webp" alt="AV Pool Cleaners Logo" width="190" height="95" loading="lazy">
         </div>
-    </footer>
+      </div>
 
-    <!-- SCRIPTS -->
-    <script src="../js/script.js"></script>
+      <!-- GRID -->
+      <div class="footer-grid">
+
+        <!-- BRAND -->
+        <div class="footer-box">
+          <h4>AV Pool Cleaners</h4>
+          <p>
+            Professional pool & spa cleaning for homeowners throughout the Antelope Valley.
+            Reliable weekly service, crystal-clear water, and friendly local technicians.
+          </p>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="footer-box footer-services">
+          <h4>Services</h4>
+          <span><a href="/services/weekly-cleaning/">Weekly Pool Cleaning</a></span>
+          <span><a href="/services/chemical-balancing/">Chemical Balancing</a></span>
+          <span><a href="/services/filter-cleaning/">Filter Cleaning</a></span>
+          <span><a href="/services/green-pool-recovery/">Green Pool Recovery</a></span>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-box">
+          <h4>Contact</h4>
+          <p>
+            📞 <a href="tel:6614984444">(661) 498-4444</a><br>
+            📍 Antelope Valley, CA<br>
+            🕒 Mon–Fri · 8am–6pm<br>
+            ⭐ <a
+              href="https://www.google.com/maps/place/AV+Pool+Cleaners/@34.6876064,-118.2278499,11z/data=!3m1!4b1!4m6!3m5!1s0x412e8c13e824aa61:0xbc87f34cc63ded7b!8m2!3d34.6874355!4d-118.0627039!16s%2Fg%2F11yv5bhkh8?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank" rel="noopener">Google Reviews</a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- SERVICE AREA LINKS -->
+      <div class="footer-service-area">
+        Professional Pool Care Throughout the Antelope Valley
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="footer-divider">
+        <img src="../images/icon-chemical.webp" alt="" class="footer-floater" width="100" height="100" loading="lazy">
+      </div>
+
+      <!-- SCRIPTS -->
+    <script src="../js/script.js" defer></script>
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById("year").textContent = new Date().getFullYear();
+        });
     </script>
 
 </body>
