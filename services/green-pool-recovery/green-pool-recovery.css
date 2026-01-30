@@ -1,0 +1,833 @@
+/* ===================================== */
+/* GREEN POOL RECOVERY PAGE STYLES       */
+/* ===================================== */
+
+/* ======================================= */
+/* GREEN PAGE HEADER                       */
+/* ======================================= */
+.av-header-green {
+    width: 100%;
+    background: linear-gradient(180deg, #e9f9ef 0%, #ffffff 100%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+.av-cta-green {
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    color: #ffffff !important;
+    border-radius: 8px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    transition: 0.25s ease;
+}
+
+.av-cta-green:hover {
+    background: linear-gradient(135deg, #2ecc71, #239b56);
+    transform: translateY(-1px);
+}
+
+.av-header-green .av-nav a {
+    color: #1e5631;
+}
+
+.av-header-green .av-nav a:hover {
+    color: #27ae60;
+}
+
+.av-header-green .av-mobile-menu {
+    background: #f0fbf5;
+}
+
+.av-header-green .av-mobile-menu a {
+    color: #1e5631;
+}
+
+.av-header-green .av-menu-icon span {
+    background: #1e5631;
+}
+
+/* ===================================== */
+/* GREEN POOL FOOTER                     */
+/* ===================================== */
+.av-footer-green {
+    width: 100vw;
+    background: linear-gradient(180deg,
+            #145a32 0%,
+            #1e8449 45%,
+            #27ae60 100%);
+    color: #eafff2;
+    padding: 110px 20px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.av-footer-green::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%,
+            rgba(255, 255, 255, 0.28),
+            transparent 60%);
+    pointer-events: none;
+}
+
+.footer-green-inner {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+
+.footer-green-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 65px;
+}
+
+.footer-green-logo-card {
+    background: #ffffff;
+    padding: 26px 40px;
+    border-radius: 22px;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.25),
+        inset 0 0 0 1px rgba(46, 204, 113, 0.35);
+}
+
+.footer-green-logo-card img {
+    max-width: 230px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer-green-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-green-box h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.footer-green-box p,
+.footer-green-box a {
+    font-size: 15.5px;
+    color: #eafff2;
+    line-height: 1.7;
+    text-decoration: none;
+}
+
+.footer-green-box a:hover {
+    color: #ffffff;
+}
+
+.footer-green-box a[href^="tel"] {
+    font-weight: 800;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.footer-green-services span {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.footer-green-service-area {
+    text-align: center;
+    font-size: 14.5px;
+    color: #dcf7e6;
+    margin-bottom: 48px;
+}
+
+.footer-green-service-area a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-green-service-area a:hover {
+    text-decoration: underline;
+}
+
+.footer-green-divider {
+    position: relative;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.35);
+    margin-bottom: 38px;
+}
+
+.footer-green-floater {
+    position: absolute;
+    left: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110px;
+    opacity: 0.9;
+    pointer-events: none;
+    animation:
+        greenFloatAcross 32s linear infinite,
+        greenFloatBob 4.5s ease-in-out infinite;
+}
+
+@keyframes greenFloatAcross {
+    from {
+        left: -140px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes greenFloatBob {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateY(-7px);
+    }
+}
+
+.footer-green-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #dcf7e6;
+}
+
+.footer-green-bottom a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 6px;
+    font-weight: 600;
+}
+
+.footer-green-bottom a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .av-footer-green {
+        padding: 90px 18px 40px;
+    }
+
+    .footer-green-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-green-logo-card img {
+        max-width: 200px;
+    }
+
+    .footer-green-floater {
+        width: 90px;
+        animation-duration: 40s;
+        opacity: 0.75;
+    }
+}
+
+/* ===================================== */
+/* HERO SECTION                          */
+/* ===================================== */
+
+/* HERO SECTION */
+.av-hero-green {
+    width: 100vw;
+    padding: 110px 20px 130px;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(120, 200, 140, 0.55), transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(90, 180, 120, 0.55), transparent 60%),
+        linear-gradient(to right,
+            rgba(10, 60, 35, 0.85),
+            rgba(20, 110, 70, 0.75)),
+        url("../images/green-hero-bg.webp") center / cover no-repeat;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.av-hero-green::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/water-texture.webp') center / cover no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.av-hero-green::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 20%,
+            rgba(255, 255, 255, 0.18),
+            transparent 60%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.av-hero-inner {
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+
+.av-hero-green h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 24px;
+    max-width: 900px;
+    color: #ffffff;
+}
+
+.av-hero-green p {
+    font-size: 20px;
+    max-width: 720px;
+    margin-bottom: 42px;
+    color: #e6fff2;
+}
+
+.av-hero-ctas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.av-btn-primary {
+    background: linear-gradient(135deg, #1ecf8b, #0fa36b);
+    color: #ffffff;
+    padding: 16px 34px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(15, 163, 107, 0.45);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.av-btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 163, 107, 0.65);
+}
+
+.av-btn-secondary {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    padding: 16px 34px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(6px);
+    transition: background .25s ease, transform .25s ease;
+}
+
+.av-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-3px);
+}
+
+/* BENEFITS SECTION */
+.av-green-benefits {
+    width: 100vw;
+    padding: 110px 20px 130px;
+    background: linear-gradient(to bottom, #e9f7ee, #ffffff);
+    position: relative;
+    overflow: hidden;
+}
+
+.av-algae-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(46, 204, 113, .18), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(39, 174, 96, .15), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(88, 214, 141, .18), transparent 50%);
+    pointer-events: none;
+}
+
+.av-green-benefits-inner {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.av-green-benefits h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #145a32;
+    margin-bottom: 22px;
+}
+
+.av-green-benefits .lead {
+    max-width: 840px;
+    margin: 0 auto 75px;
+    font-size: 18.5px;
+    color: #2f4f3f;
+    line-height: 1.7;
+}
+
+.av-green-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+}
+
+.av-green-card {
+    background: rgba(255, 255, 255, .94);
+    border-radius: 22px;
+    padding: 44px 36px 48px;
+    box-shadow:
+        0 20px 44px rgba(0, 0, 0, .08),
+        inset 0 0 0 1px rgba(255, 255, 255, .7);
+    backdrop-filter: blur(6px);
+    transition: .35s ease;
+}
+
+.av-green-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 32px 64px rgba(0, 0, 0, .12),
+        inset 0 0 0 1px rgba(255, 255, 255, .9);
+}
+
+.av-green-icon {
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.av-green-icon img {
+    max-height: 74px;
+    opacity: .9;
+}
+
+.av-green-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e8449;
+    margin-bottom: 12px;
+}
+
+.av-green-card p {
+    font-size: 16px;
+    color: #3e5f4d;
+    line-height: 1.65;
+}
+
+.av-green-cta {
+    margin-top: 75px;
+}
+
+.av-green-cta a {
+    display: inline-block;
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    color: #ffffff;
+    padding: 18px 46px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, .22);
+    transition: .3s ease;
+}
+
+.av-green-cta a span {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.av-green-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, .3);
+}
+
+/* RECOVERY PROCESS SECTION */
+.av-recovery-process {
+    width: 100vw;
+    padding: 80px 20px 120px;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(120, 200, 140, 0.45), transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(90, 180, 120, 0.45), transparent 60%),
+        linear-gradient(to bottom, #d8f3dc, #b7e4c7);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.av-recovery-process h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0b3d2e;
+    margin-bottom: 18px;
+    letter-spacing: -0.4px;
+    line-height: 1.15;
+    position: relative;
+    z-index: 5;
+}
+
+.av-recovery-process>p {
+    max-width: 780px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    color: #2f5d46;
+    line-height: 1.6;
+    position: relative;
+    z-index: 5;
+}
+
+.av-process-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    z-index: 5;
+}
+
+.av-process-card {
+    background: rgba(255, 255, 255, 0.94);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .1);
+}
+
+.av-process-card h3 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0b3d2e;
+}
+
+.av-process-card p {
+    font-size: 15px;
+    color: #355f4a;
+    line-height: 1.55;
+}
+
+/* BEFORE/AFTER SECTION */
+.av-green-ba {
+    width: 100vw;
+    padding: 100px 20px 120px;
+    background:
+        radial-gradient(circle at 25% 25%, rgba(120, 200, 140, .45), transparent 55%),
+        linear-gradient(to bottom, #d8f3dc 0%, #edf8ff 55%, #ffffff 100%);
+}
+
+.av-green-ba-inner {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.av-green-ba h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0b3d2e;
+    margin-bottom: 20px;
+}
+
+.av-green-ba-lead {
+    max-width: 820px;
+    margin: 0 auto 30px;
+    font-size: 18.5px;
+    color: #355f4a;
+    line-height: 1.65;
+}
+
+.av-green-ba-frame {
+    padding: 16px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, .88);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, .15),
+        inset 0 0 0 1px rgba(255, 255, 255, .7);
+    backdrop-filter: blur(6px);
+}
+
+/* PRICING SECTION */
+.av-green-pricing {
+    width: 100%;
+    padding: 90px 20px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(120, 200, 140, .35), transparent 55%),
+        linear-gradient(to bottom, #d8f3dc, #edf8ff, #ffffff);
+}
+
+.av-pricing-header {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.av-pricing-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0b3d2e;
+    margin-bottom: 18px;
+}
+
+.av-pricing-header p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #355f4a;
+}
+
+.av-pricing-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.av-pricing-card {
+    background: rgba(255, 255, 255, .94);
+    border-radius: 24px;
+    padding: 42px 34px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.av-pricing-card.popular {
+    border-top: 6px solid #1ecf8b;
+}
+
+.av-popular-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1ecf8b;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.av-pricing-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b3d2e;
+    margin-bottom: 10px;
+}
+
+.av-price {
+    font-size: 44px;
+    font-weight: 800;
+    color: #0fa36b;
+    margin: 10px 0 6px;
+}
+
+.av-price span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #5c7f6b;
+}
+
+.av-desc {
+    font-size: 15.5px;
+    color: #355f4a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 52px;
+}
+
+.av-pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: #2f5d46;
+}
+
+.av-pricing-card ul li::before {
+    content: "✓ ";
+    color: #1ecf8b;
+    font-weight: 800;
+}
+
+.av-pricing-card a {
+    margin-top: auto;
+    display: inline-block;
+    background: linear-gradient(135deg, #1ecf8b, #0fa36b);
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .25s ease;
+}
+
+.av-pricing-card a:hover {
+    background: #0c8f5c;
+}
+
+/* SERVICE AREA SECTION */
+.av-green-service-area {
+    width: 100vw;
+    padding: 110px 20px;
+    background:
+        radial-gradient(circle at 25% 20%, rgba(120, 200, 140, .35), transparent 55%),
+        linear-gradient(to bottom, #d8f3dc, #edf8ff, #ffffff);
+}
+
+.av-green-service-area h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b3d2e;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.av-green-intro {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    font-size: 18.5px;
+    color: #355f4a;
+    line-height: 1.65;
+    text-align: center;
+}
+
+/* TECH SECTION */
+.av-green-tech {
+    width: 100vw;
+    padding: 110px 20px;
+    background: linear-gradient(to bottom, #f4fff6, #ffffff);
+    position: relative;
+    overflow: hidden;
+}
+
+.av-green-tech::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(47, 191, 113, 0.14), transparent 48%);
+    pointer-events: none;
+}
+
+.av-green-tech h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: #1e6b3a;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.av-green-tech-intro {
+    max-width: 820px;
+    margin: 0 auto 70px;
+    text-align: center;
+    font-size: 18px;
+    color: #3f5f4a;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+/* FAQ SECTION */
+.av-green-faq {
+    width: 100vw;
+    padding: 90px 20px;
+    background: #ecfff1;
+    position: relative;
+    overflow: hidden;
+}
+
+.av-green-faq h2 {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #1e6b3a;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 10;
+}
+
+.av-green-faq-intro {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    text-align: center;
+    font-size: 18px;
+    color: #3f5f4a;
+    position: relative;
+    z-index: 10;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+
+    .av-green-benefits-grid,
+    .av-process-grid,
+    .av-pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .av-hero-green {
+        padding: 90px 20px 110px;
+        text-align: center;
+    }
+
+    .av-hero-green h1 {
+        font-size: 38px;
+    }
+
+    .av-hero-green p {
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .av-hero-ctas {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .av-green-benefits-grid,
+    .av-process-grid,
+    .av-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .av-green-benefits h2,
+    .av-recovery-process h2,
+    .av-green-ba h2,
+    .av-pricing-header h2 {
+        font-size: 32px;
+    }
+}

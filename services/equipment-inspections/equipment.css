@@ -1,0 +1,251 @@
+/* ============================= */
+/* EQUIPMENT & INSPECTIONS PAGE  */
+/* ============================= */
+
+/* INTRO SECTION */
+.av-equipment-intro {
+    width: 100vw;
+    padding: 110px 20px;
+    background: #ffffff;
+}
+
+.av-equipment-intro-inner {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.av-equipment-intro-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #0077cc;
+    margin-bottom: 14px;
+}
+
+.av-equipment-intro h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #002b5c;
+    margin-bottom: 22px;
+    letter-spacing: -.02em;
+}
+
+.av-equipment-intro p {
+    font-size: 18.5px;
+    color: #5a6f82;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto 18px;
+}
+
+.av-equipment-value {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.av-equipment-value-item {
+    background: #f5fbff;
+    border-radius: 20px;
+    padding: 26px 22px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #003366;
+    box-shadow: 0 12px 28px rgba(0, 60, 120, 0.08);
+}
+
+/* WHAT WE INSPECT (Based on Pricing What's Included) */
+.av-whats-included {
+    width: 100vw;
+    padding: 110px 20px;
+    background: linear-gradient(to bottom, #f2f9ff 0%, #ffffff 100%);
+}
+
+.av-whats-included-inner {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.av-whats-included h2 {
+    font-size: 38px;
+    color: #002b5c;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: -.02em;
+}
+
+.av-whats-included .sub {
+    text-align: center;
+    font-size: 18px;
+    color: #5a6f82;
+    max-width: 760px;
+    margin: 0 auto 60px;
+    line-height: 1.75;
+}
+
+.av-whats-card {
+    background: linear-gradient(to bottom, #ffffff, #fbfdff);
+    border-radius: 26px;
+    padding: 56px 56px;
+    box-shadow:
+        0 30px 70px rgba(0, 60, 120, 0.12),
+        inset 0 0 0 1px rgba(0, 120, 200, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.av-whats-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #66d9ff, #00aaff, #66d9ff);
+}
+
+.av-whats-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 60px;
+}
+
+.av-whats-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 16.8px;
+    color: #3f556b;
+    line-height: 1.65;
+}
+
+.av-check {
+    flex: 0 0 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #00c6ff, #0094d9);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0, 160, 255, .45);
+}
+
+/* COMMON ISSUES (Explainer) */
+.av-equipment-explainer {
+    width: 100vw;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f7fcff 100%);
+}
+
+.av-equipment-explainer-inner {
+    max-width: 980px;
+    margin: auto;
+    text-align: center;
+}
+
+.av-equipment-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #0077cc;
+    margin-bottom: 14px;
+}
+
+.av-equipment-explainer h2 {
+    font-size: 36px;
+    color: #003366;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.av-equipment-explainer p {
+    font-size: 17.5px;
+    color: #4a6074;
+    line-height: 1.8;
+    margin: 0 auto 18px;
+    max-width: 860px;
+}
+
+/* FAQ */
+.av-equipment-faq {
+    width: 100vw;
+    padding: 100px 20px;
+    background: #f6fbff;
+}
+
+.av-equipment-faq-inner {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.av-equipment-faq h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 18px;
+}
+
+.av-equipment-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.av-equipment-faq-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px 28px;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+.av-equipment-faq-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.av-equipment-faq-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.65;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .av-equipment-value,
+    .av-whats-list,
+    .av-equipment-faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .av-equipment-intro {
+        padding: 90px 18px;
+    }
+
+    .av-equipment-intro h2 {
+        font-size: 30px;
+    }
+
+    .av-whats-included {
+        padding: 90px 18px;
+    }
+
+    .av-whats-card {
+        padding: 40px 28px;
+    }
+
+    .av-equipment-faq {
+        padding: 80px 16px;
+    }
+}

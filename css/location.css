@@ -1,0 +1,833 @@
+/* ============================= */
+/* GENERIC LOCATION PAGE STYLES */
+/* ============================= */
+
+/* HERO SECTION */
+.av-location-hero {
+    width: 100vw;
+    padding: 110px 20px 130px;
+    background:
+        linear-gradient(to right,
+            rgba(0, 40, 90, 0.78),
+            rgba(0, 120, 200, 0.6)),
+        url("../images/hero-bg.webp") center / cover no-repeat;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.av-location-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 20%,
+            rgba(255, 255, 255, 0.15),
+            transparent 60%);
+    pointer-events: none;
+}
+
+.av-location-hero-inner {
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+
+.av-location-hero h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 24px;
+    max-width: 860px;
+    color: #ffffff !important;
+}
+
+.av-location-hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin-bottom: 42px;
+    color: #eaf6ff;
+}
+
+.av-location-hero-ctas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* BENEFITS SECTION */
+.av-lux-benefits-location {
+    width: 100vw;
+    padding: 100px 20px 120px;
+    background: linear-gradient(to bottom, #edf8ff, #ffffff);
+    position: relative;
+    overflow: hidden;
+}
+
+.av-water-overlay-location {
+    position: absolute;
+    inset: 0;
+    background: url('../images/water-texture.webp') center/cover no-repeat;
+    opacity: .08;
+    pointer-events: none;
+}
+
+.av-lux-benefits-location-inner {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.av-lux-benefits-location h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.av-lux-benefits-location .lead {
+    max-width: 820px;
+    margin: 0 auto 70px;
+    font-size: 18.5px;
+    color: #425d74;
+    line-height: 1.65;
+}
+
+.av-lux-benefits-location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+}
+
+.av-lux-card-location {
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 20px;
+    padding: 42px 34px 46px;
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.av-lux-card-location:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 30px 60px rgba(0, 68, 136, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.av-lux-icon-location {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.av-lux-icon-location img {
+    max-height: 72px;
+    opacity: 1;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.av-lux-card-location h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 12px;
+}
+
+.av-lux-card-location p {
+    font-size: 16px;
+    color: #4a6074;
+    line-height: 1.65;
+}
+
+.av-lux-cta-location {
+    margin-top: 70px;
+}
+
+.av-lux-cta-location a {
+    display: inline-block;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: #ffffff;
+    padding: 18px 44px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .18);
+    transition: .3s ease;
+}
+
+.av-lux-cta-location a span {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.av-lux-cta-location a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, .25);
+}
+
+/* SERVICES SECTION */
+.av-location-services {
+    width: 100vw;
+    padding: 80px 20px 120px;
+    background: #bde4ff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.av-location-services h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 18px;
+    letter-spacing: -0.4px;
+    line-height: 1.15;
+    position: relative;
+    z-index: 8;
+}
+
+.av-location-services>p {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    color: #345b7a;
+    line-height: 1.6;
+    position: relative;
+    z-index: 8;
+}
+
+.av-location-services .bubble {
+    position: absolute;
+    bottom: -60px;
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, .65);
+    border-radius: 50%;
+    animation: rise 9s infinite ease-in;
+    z-index: 2;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-360px);
+        opacity: 0;
+    }
+}
+
+.av-location-services-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    z-index: 4;
+}
+
+.av-location-service-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+.av-location-service-card h3 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #003366;
+}
+
+.av-location-service-card p {
+    font-size: 15px;
+    color: #4a647d;
+    line-height: 1.55;
+}
+
+/* BEFORE/AFTER SECTION */
+.av-location-ba {
+    width: 100vw;
+    padding: 100px 20px 120px;
+    background: linear-gradient(to bottom, #edf8ff, #ffffff);
+}
+
+.av-location-ba-inner {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.av-location-ba h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.av-location-ba-lead {
+    max-width: 820px;
+    margin: 0 auto 30px;
+    font-size: 18.5px;
+    color: #4a6074;
+    line-height: 1.65;
+}
+
+.av-location-ba-instruction {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto 26px;
+    padding: 10px 20px;
+    background: rgba(0, 119, 204, .08);
+    color: #003366;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px rgba(0, 119, 204, .15);
+}
+
+.av-location-ba-icon {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.av-location-ba-frame {
+    padding: 16px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, .85);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, .15),
+        inset 0 0 0 1px rgba(255, 255, 255, .7);
+    backdrop-filter: blur(6px);
+}
+
+/* PRICING SECTION */
+.av-location-pricing {
+    width: 100%;
+    padding: 90px 20px;
+    background: #f4fbff;
+}
+
+.av-location-header {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.av-location-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #002b5c;
+    margin-bottom: 18px;
+}
+
+.av-location-header p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.av-location-pricing-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.av-location-pricing-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 42px 34px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.av-location-pricing-card.popular {
+    border-top: 6px solid #1a8cff;
+}
+
+.av-location-popular-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a8cff;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.av-location-pricing-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #002b5c;
+    margin-bottom: 10px;
+}
+
+.av-location-price {
+    font-size: 44px;
+    font-weight: 800;
+    color: #1a5fd1;
+    margin: 10px 0 6px;
+}
+
+.av-location-price span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+}
+
+.av-location-desc {
+    font-size: 15.5px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 52px;
+}
+
+.av-location-pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.av-location-pricing-card ul li::before {
+    content: "• ";
+    color: #1a8cff;
+    font-weight: 700;
+}
+
+.av-location-pricing-card a {
+    margin-top: auto;
+    display: inline-block;
+    background: #1a5fd1;
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .25s ease;
+}
+
+.av-location-pricing-card a:hover {
+    background: #0f4cb3;
+}
+
+.av-location-pricing-note {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-top: 45px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* SERVICE AREA SECTION */
+.av-location-service-area {
+    width: 100vw;
+    padding: 110px 20px;
+    background: linear-gradient(to bottom, #eef8ff, #ffffff);
+}
+
+.av-location-service-area h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.av-location-service-area .av-location-intro {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    font-size: 18.5px;
+    color: #4a6074;
+    line-height: 1.65;
+    text-align: center;
+}
+
+.av-location-area-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.av-location-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 42px 38px;
+    box-shadow:
+        0 24px 50px rgba(0, 0, 0, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.85);
+}
+
+.av-location-map-wrap {
+    background: linear-gradient(to bottom, #f2faff, #ffffff);
+    border-radius: 18px;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.av-location-map-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 14%;
+    background: rgba(0, 119, 204, 0.12);
+    border-radius: 32px;
+}
+
+.av-location-map-wrap img {
+    position: relative;
+    z-index: 5;
+    width: 68%;
+    max-width: 280px;
+}
+
+.av-location-map-copy {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.av-location-map-copy h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.av-location-map-copy p {
+    font-size: 16.5px;
+    color: #556b7e;
+    line-height: 1.65;
+}
+
+.av-location-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 22px;
+}
+
+.av-location-area-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #33485c;
+}
+
+.av-location-area-list li {
+    margin-bottom: 8px;
+}
+
+.av-location-area-cta {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.av-location-area-cta a {
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: #fff;
+    padding: 18px 46px;
+    border-radius: 999px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    transition: .25s ease;
+}
+
+.av-location-area-cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.36);
+}
+
+/* TESTIMONIALS SECTION */
+.av-location-testimonials {
+    width: 100vw;
+    padding: 80px 20px 90px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.av-location-testimonials h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 12px;
+}
+
+.av-location-intro {
+    max-width: 760px;
+    margin: 0 auto 14px;
+    text-align: center;
+    font-size: 17px;
+    color: #444;
+}
+
+.av-location-disclaimer {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 50px;
+}
+
+.av-location-review-viewport {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.av-location-review-track {
+    display: flex;
+    width: 200%;
+    animation: avLocationScroll 42s linear infinite;
+}
+
+.av-location-review-viewport:hover .av-location-review-track {
+    animation-play-state: paused;
+}
+
+.av-location-review-card {
+    flex: 0 0 auto;
+    width: 320px;
+    margin-right: 26px;
+    background: #f8fcff;
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+    font-size: 15.5px;
+    color: #333;
+}
+
+.av-location-review-card strong {
+    display: block;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 4px;
+}
+
+.av-location-review-stars {
+    color: #f5b400;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.av-location-review-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.av-location-review-cta a {
+    background: #0b5ec7;
+    color: #fff;
+    padding: 16px 42px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    display: inline-block;
+}
+
+@keyframes avLocationScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* TECH SECTION */
+.av-location-tech {
+    width: 100vw;
+    padding: 110px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f5fbff);
+    position: relative;
+    overflow: hidden;
+}
+
+.av-location-tech::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(0, 153, 255, 0.12), transparent 45%);
+    pointer-events: none;
+}
+
+.av-location-tech h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.av-location-tech .av-location-tech-intro {
+    max-width: 820px;
+    margin: 0 auto 70px;
+    text-align: center;
+    font-size: 18px;
+    color: #4b6378;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+.av-location-tech-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 70px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.av-location-tech-photo {
+    background: linear-gradient(145deg, #ffffff, #eef6fb);
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.av-location-tech-photo img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+}
+
+.av-location-tech-quote {
+    font-size: 26px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 22px;
+    line-height: 1.3;
+}
+
+.av-location-tech-copy {
+    font-size: 16.5px;
+    color: #445b6e;
+    line-height: 1.75;
+    margin-bottom: 28px;
+}
+
+.av-location-tech-points {
+    margin-bottom: 36px;
+}
+
+.av-location-tech-point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    font-size: 15.5px;
+    color: #2f465a;
+}
+
+.av-location-tech-point span {
+    color: #00aaff;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.av-location-tech-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: #fff;
+    padding: 16px 44px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.av-location-tech-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.38);
+}
+
+/* FAQ SECTION */
+.av-location-faq {
+    width: 100vw;
+    padding: 90px 20px;
+    background: #e9f7ff;
+}
+
+.av-location-faq h2 {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 18px;
+}
+
+.av-location-faq-intro {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+}
+
+@media (max-width: 900px) {
+    .av-location-hero h1 {
+        font-size: 38px;
+    }
+
+    .av-location-area-grid,
+    .av-location-tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .av-lux-benefits-location-grid,
+    .av-location-services-grid,
+    .av-location-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}

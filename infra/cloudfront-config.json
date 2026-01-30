@@ -1,0 +1,56 @@
+{
+    "Comment": "AV Pool Cleaning CloudFront Distribution",
+    "CallerReference": "av-pool-cleaning-2026-01-15",
+    "Aliases": {
+        "Quantity": 0
+    },
+    "DefaultRootObject": "index.html",
+    "Origins": {
+        "Quantity": 1,
+        "Items": [
+            {
+                "Id": "S3-av-pool-cleaning-com",
+                "DomainName": "av-pool-cleaning-com.s3-website-us-east-1.amazonaws.com",
+                "CustomOriginConfig": {
+                    "HTTPPort": 80,
+                    "HTTPSPort": 443,
+                    "OriginProtocolPolicy": "http-only"
+                }
+            }
+        ]
+    },
+    "DefaultCacheBehavior": {
+        "TargetOriginId": "S3-av-pool-cleaning-com",
+        "ViewerProtocolPolicy": "redirect-to-https",
+        "AllowedMethods": {
+            "Quantity": 2,
+            "Items": [
+                "GET",
+                "HEAD"
+            ],
+            "CachedMethods": {
+                "Quantity": 2,
+                "Items": [
+                    "GET",
+                    "HEAD"
+                ]
+            }
+        },
+        "Compress": true,
+        "ForwardedValues": {
+            "QueryString": false,
+            "Cookies": {
+                "Forward": "none"
+            }
+        },
+        "MinTTL": 0,
+        "DefaultTTL": 86400,
+        "MaxTTL": 31536000,
+        "TrustedSigners": {
+            "Enabled": false,
+            "Quantity": 0
+        }
+    },
+    "Comment": "CloudFront distribution for AV Pool Cleaning static site",
+    "Enabled": true
+}

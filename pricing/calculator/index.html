@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pool Service Pricing Calculator | AV Pool Cleaners</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Estimate your pool service pricing with our interactive calculator. Get instant pricing estimates for weekly maintenance in Palmdale, Lancaster, and the Antelope Valley.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://avpoolcleaners.com/pricing/calculator/">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../pricing.css">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <style>
+    .calculator-container {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .form-group select,
+    .form-group input[type="radio"] {
+      cursor: pointer;
+    }
+
+    .form-group select {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s;
+    }
+
+    .form-group select:focus {
+      outline: none;
+      border-color: #0077be;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .radio-option:hover {
+      border-color: #0077be;
+      background: #f0f8ff;
+    }
+
+    .radio-option input[type="radio"]:checked+label {
+      color: #0077be;
+      font-weight: 600;
+    }
+
+    .radio-option input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #0077be;
+    }
+
+    .estimate-result {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0077be 0%, #005a8f 100%);
+      color: white;
+      border-radius: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    .estimate-result.show {
+      display: block;
+      animation: slideIn 0.4s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .estimate-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 1rem 0;
+    }
+
+    .estimate-note {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .calculate-btn {
+      padding: 1rem 2rem;
+      background: #0077be;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .calculate-btn:hover {
+      background: #005a8f;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .cta-buttons a {
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .cta-primary {
+      background: white;
+      color: #0077be;
+    }
+
+    .cta-primary:hover {
+      background: #f0f8ff;
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="av-header">
+    <div class="av-header-inner">
+      <a href="/" class="av-logo">
+        <img src="../../images/logo.webp" alt="AV Pool Cleaners Logo">
+      </a>
+
+      <nav class="av-nav">
+        <a href="/services/green-pool-recovery/" class="av-green-link">Green Pool Recovery</a>
+        <a href="/services/">Pool Services</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="tel:6614984444" class="av-cta">Get a Quote</a>
+      </nav>
+
+      <button class="av-menu-icon" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="av-mobile-menu">
+      <a href="/services/green-pool-recovery/" class="av-green-link">Green Pool Recovery</a>
+      <a href="/services/">Pool Services</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <a href="tel:6614984444" class="av-cta">Get a Quote</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="av-pricing-hero">
+    <div class="av-pricing-hero-inner">
+      <h1>Pool Service Pricing Calculator</h1>
+      <p>
+        Get an instant estimate for your weekly pool maintenance.<br>
+        Answer a few quick questions to see your estimated monthly cost.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR SECTION -->
+  <section style="padding: 3rem 1.5rem;">
+    <div class="calculator-container">
+      <h2 style="text-align: center; margin-bottom: 2rem; color: #0077be;">Estimate Your Monthly Cost</h2>
+
+      <form class="calculator-form" id="pricingCalculator">
+
+        <!-- Pool Size -->
+        <div class="form-group">
+          <label for="poolSize">Pool Size (Gallons)</label>
+          <select id="poolSize" required>
+            <option value="">Select pool size...</option>
+            <option value="small">Small (Up to 15,000 gallons)</option>
+            <option value="medium">Medium (15,000 - 25,000 gallons)</option>
+            <option value="large">Large (25,000+ gallons)</option>
+            <option value="unknown">Not sure / Need help</option>
+          </select>
+        </div>
+
+        <!-- Spa -->
+        <div class="form-group">
+          <label>Do you also have a spa/hot tub?</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="spaNo" name="spa" value="no" required>
+              <label for="spaNo">No, pool only</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="spaYes" name="spa" value="yes">
+              <label for="spaYes">Yes, I have a pool and spa</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Debris Level -->
+        <div class="form-group">
+          <label for="debris">Debris Level (Trees, Wind, etc.)</label>
+          <select id="debris" required>
+            <option value="">Select debris level...</option>
+            <option value="low">Low (Few trees, sheltered area)</option>
+            <option value="medium">Medium (Some trees or wind)</option>
+            <option value="high">High (Many trees, open desert area)</option>
+          </select>
+        </div>
+
+        <!-- Pool Condition -->
+        <div class="form-group">
+          <label for="condition">Current Pool Condition</label>
+          <select id="condition" required>
+            <option value="">Select condition...</option>
+            <option value="good">Good (Clear water, currently maintained)</option>
+            <option value="fair">Fair (Some cloudiness or algae)</option>
+            <option value="poor">Poor (Green water or neglected)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="calculate-btn">Calculate My Estimate</button>
+      </form>
+
+      <!-- RESULT -->
+      <div id="estimateResult" class="estimate-result">
+        <h3>Your Estimated Monthly Cost</h3>
+        <div class="estimate-price" id="priceRange"></div>
+        <p class="estimate-note" id="estimateNote"></p>
+        <div class="cta-buttons">
+          <a href="tel:6614984444" class="cta-primary">Call for Exact Quote</a>
+          <a href="/pricing/" class="cta-secondary">View All Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO SECTION -->
+  <section class="av-pricing-intro">
+    <div class="av-pricing-intro-inner">
+      <div class="av-pricing-intro-eyebrow">How It Works</div>
+      <h2>About This Calculator</h2>
+      <p>
+        This pricing calculator provides an estimated range based on common
+        pool service factors in the Antelope Valley. Your actual price may vary
+        based on your specific pool setup, equipment type, and service needs.
+      </p>
+      <p>
+        For the most accurate quote, call us at (661) 498-4444. We'll ask a few
+        quick questions and provide your exact monthly price with no pressure or obligation.
+      </p>
+
+      <div class="av-pricing-value">
+        <div class="av-pricing-value-item">
+          ✔ Instant estimates
+        </div>
+        <div class="av-pricing-value-item">
+          ✔ Based on actual pricing data
+        </div>
+        <div class="av-pricing-value-item">
+          ✔ Call for exact quote
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="av-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <div class="footer-logo-card">
+          <img src="../../images/logo.webp" alt="AV Pool Cleaners Logo">
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-box">
+          <h4>AV Pool Cleaners</h4>
+          <p>
+            Professional pool & spa cleaning for homeowners throughout the Antelope Valley.
+            Reliable weekly service, crystal-clear water, and friendly local technicians.
+          </p>
+        </div>
+
+        <div class="footer-box footer-services">
+          <h4>Services</h4>
+          <span><a href="/services/weekly-cleaning/">Weekly Pool Cleaning</a></span>
+          <span><a href="/services/chemical-balancing/">Chemical Balancing</a></span>
+          <span><a href="/services/filter-cleaning/">Filter Cleaning</a></span>
+          <span><a href="/services/green-pool-recovery/">Green Pool Recovery</a></span>
+        </div>
+
+        <div class="footer-box">
+          <h4>Contact</h4>
+          <p>
+            📞 <a href="tel:6614984444">(661) 498-4444</a><br>
+            📍 Antelope Valley, CA<br>
+            🕒 Mon–Fri · 8am–6pm<br>
+            ⭐ <a href="https://www.google.com/maps/place/AV+Pool+Cleaners/@34.6876064,-118.2278499,11z/data=!3m1!4b1!4m6!3m5!1s0x412e8c13e824aa61:0xbc87f34cc63ded7b!8m2!3d34.6874355!4d-118.0627039!16s%2Fg%2F11yv5bhkh8?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Google Reviews</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-service-area">
+        Serving Palmdale • Lancaster • Quartz Hill • Rosamond • Antelope Valley
+      </div>
+
+      <div class="footer-divider">
+        <img src="../../images/icon-chemical.webp" alt="" class="footer-floater">
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span> AV Pool Cleaners ·
+        <a href="/about/">About</a> ·
+        <a href="/pricing/">Pricing</a> ·
+        <a href="/services/">Services</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="../../js/script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Pricing Calculator Logic
+    document.getElementById('pricingCalculator').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const poolSize = document.getElementById('poolSize').value;
+      const spa = document.querySelector('input[name="spa"]:checked').value;
+      const debris = document.getElementById('debris').value;
+      const condition = document.getElementById('condition').value;
+
+      let baseMin = 0;
+      let baseMax = 0;
+      let note = '';
+
+      // Base pricing by pool size
+      if (poolSize === 'small') {
+        baseMin = 100;
+        baseMax = 120;
+      } else if (poolSize === 'medium') {
+        baseMin = 120;
+        baseMax = 140;
+      } else if (poolSize === 'large') {
+        baseMin = 140;
+        baseMax = 160;
+      } else {
+        baseMin = 110;
+        baseMax = 150;
+        note = 'We recommend a quick site visit to determine your exact pool size. ';
+      }
+
+      // Adjust for spa
+      if (spa === 'yes') {
+        baseMin += 40;
+        baseMax += 50;
+      }
+
+      // Adjust for debris
+      if (debris === 'high') {
+        baseMin += 10;
+        baseMax += 15;
+      } else if (debris === 'medium') {
+        baseMin += 5;
+        baseMax += 10;
+      }
+
+      // Add note for poor condition
+      if (condition === 'poor') {
+        note += 'Green pool recovery may be needed before starting weekly service (from $250). ';
+      } else if (condition === 'fair') {
+        note += 'Initial chemical balancing may require extra attention in the first few weeks. ';
+      }
+
+      if (!note) {
+        note = 'This estimate is based on typical service needs for your pool type. ';
+      }
+
+      note += 'Call (661) 498-4444 for your exact quote.';
+
+      // Display result
+      document.getElementById('priceRange').textContent = `$${baseMin}–$${baseMax} / month`;
+      document.getElementById('estimateNote').textContent = note;
+      document.getElementById('estimateResult').classList.add('show');
+
+      // Scroll to result
+      document.getElementById('estimateResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  </script>
+
+</body>
+
+</html>

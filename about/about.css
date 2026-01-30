@@ -1,0 +1,268 @@
+/* ============================= */
+/* ABOUT PAGE STYLES             */
+/* ============================= */
+
+/* HERO SECTION */
+.av-about-hero {
+    width: 100vw;
+    padding: 120px 20px 140px;
+    background:
+        linear-gradient(115deg,
+            rgba(0, 28, 64, 0.88) 0%,
+            rgba(0, 96, 170, 0.72) 60%,
+            rgba(0, 150, 210, 0.55) 100%),
+        url("../images/hero-bg.webp") center / cover no-repeat;
+    color: #ffffff;
+    position: relative;
+}
+
+.av-about-hero-inner {
+    max-width: 920px;
+    margin: auto;
+}
+
+.av-about-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #bfe7ff;
+    margin-bottom: 18px;
+}
+
+.av-about-hero h1 {
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    color: #ffffff;
+    line-height: 1.15;
+}
+
+.av-about-hero p {
+    font-size: 20px;
+    max-width: 720px;
+    line-height: 1.7;
+    color: #eaf6ff;
+}
+
+/* subtle bottom fade */
+.av-about-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #ffffff);
+}
+
+/* ABOUT BODY SECTION */
+.av-about-body {
+    width: 100vw;
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+.av-about-body-inner {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.av-about-body h2 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 18px;
+}
+
+.av-about-body p {
+    font-size: 17.5px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 26px;
+    max-width: 900px;
+}
+
+/* DIVIDER */
+.av-about-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #cfe6f7, transparent);
+    margin: 60px 0;
+}
+
+/* TRUST GRID */
+.av-about-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 40px;
+}
+
+.av-about-trust-card {
+    background: #f5fbff;
+    border-radius: 18px;
+    padding: 28px 26px;
+    text-align: center;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+.av-about-trust-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.av-about-trust-card p {
+    font-size: 15.5px;
+    color: #4a6074;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* SERVICE AREA SECTION */
+.av-about-service-area {
+    width: 100vw;
+    padding: 80px 20px;
+    background: #f5fbff;
+}
+
+.av-about-service-area-inner {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.av-about-service-area h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 18px;
+}
+
+.av-about-service-area p {
+    font-size: 18px;
+    color: #4a6074;
+    max-width: 860px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+/* LOCATION GRID */
+.av-about-locations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.av-about-location {
+    background: #ffffff;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #003366;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* CTA SECTION */
+.av-about-cta {
+    width: 100vw;
+    padding: 100px 20px 120px;
+    background: linear-gradient(135deg,
+            #002b5c 0%,
+            #004a8f 60%,
+            #006bb3 100%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.av-about-cta-inner {
+    max-width: 900px;
+    margin: auto;
+}
+
+.av-about-cta h2 {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+.av-about-cta p {
+    font-size: 19px;
+    color: #eaf6ff;
+    max-width: 760px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+}
+
+/* CTA BUTTON */
+.av-about-cta a {
+    display: inline-block;
+    background: #00aaff;
+    color: #ffffff;
+    padding: 18px 46px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+    transition: all .25s ease;
+}
+
+.av-about-cta a:hover {
+    background: #008fcc;
+    transform: translateY(-2px);
+}
+
+/* SMALL TRUST LINE */
+.av-about-cta-note {
+    margin-top: 22px;
+    font-size: 14.5px;
+    color: #cfe9ff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .av-about-hero {
+        padding: 100px 20px 120px;
+    }
+
+    .av-about-hero h1 {
+        font-size: 38px;
+    }
+
+    .av-about-hero p {
+        font-size: 18px;
+    }
+
+    .av-about-body h2 {
+        font-size: 28px;
+    }
+
+    .av-about-body p {
+        font-size: 17px;
+    }
+
+    .av-about-trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .av-about-service-area h2 {
+        font-size: 26px;
+    }
+
+    .av-about-service-area p {
+        font-size: 17px;
+    }
+
+    .av-about-cta h2 {
+        font-size: 30px;
+    }
+
+    .av-about-cta p {
+        font-size: 17.5px;
+    }
+}
